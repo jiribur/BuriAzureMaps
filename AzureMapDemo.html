@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs-cz">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>Interactive Search</title>
+    <title>Interaktivní hlednání</title>
 
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1.2" type="text/css" />
     <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1.2"></script>
@@ -193,6 +193,11 @@
             top: 60px;
             right: 10px;
         }
+        
+        .popup-content {
+            padding: 10px;
+        }
+        
     </style>
 </head>
 
@@ -218,12 +223,36 @@
             style: "satellite_road_labels",
             zoom: 12
         });
-        
-        map.setTraffic({  incidents: true, flow: "absolute"});
-              
-       
-        
 
+        
+map.setTraffic({  incidents: true, flow: "absolute"});
+              
+/* Construct and add a compass control*/
+var compassControl = new atlas.control.CompassControl();
+map.addControl(compassControl, {
+  position: "bottom-right"
+});
+
+/* Construct and add a zoom control*/
+var zoomControl = new atlas.control.ZoomControl();
+map.addControl(zoomControl, {
+  position: "bottom-right"
+});
+
+/* Construct and add a pitch control*/
+var pitchControl = new atlas.control.PitchControl();
+map.addControl(pitchControl, {
+  position: "bottom-right"
+});
+
+/* Construct and add a style control*/
+var styleControl = new atlas.control.StyleControl();
+map.addControl(styleControl, {
+  position: "bottom-right"
+});
+               
+   
+        
         /* Search Info Panel */
         var searchInfoPanelBody = document.getElementById("search-info");
 
