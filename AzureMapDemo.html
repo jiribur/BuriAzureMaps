@@ -215,33 +215,13 @@
         var map = new atlas.Map("map", {
             "subscription-key": subscriptionKey,
             center: [14.437800,50.075539],
-           /* style: "satellite_road_labels", /*
+            style: "satellite_road_labels",
             zoom: 12
         });
         
         map.setTraffic({  incidents: true, flow: "absolute"});
               
-/* Construct and add a compass control*/
-var compassControl = new atlas.control.CompassControl();
-map.addControl(compassControl, {
-  position: "bottom-right"
-});
-/* Construct and add a zoom control*/
-var zoomControl = new atlas.control.ZoomControl();
-map.addControl(zoomControl, {
-  position: "bottom-right"
-});
-/* Construct and add a pitch control*/
-var pitchControl = new atlas.control.PitchControl();
-map.addControl(pitchControl, {
-  position: "bottom-right"
-});
-/* Construct and add a style control*/
-var styleControl = new atlas.control.StyleControl();
-map.addControl(styleControl, {
-  position: "bottom-right"
-});
-        
+       
         
 
         /* Search Info Panel */
