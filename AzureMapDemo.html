@@ -29,7 +29,7 @@
             //Initialize a map instance.
             map = new atlas.Map("map", {
                 center: [14.320000,50.0955397],
-                zoom: 14
+                zoom: 12
             });
             //Create an instance of the services client.
             client = new atlas.service.Client(atlas.getSubscriptionKey());
@@ -45,7 +45,11 @@
                 //Add the zoom control to the map.
                 map.controls.add(new atlas.control.ZoomControl(), {
                     position: 'top-right'
+                map.setTraffic({incidents: true, flow: 'absolute'});
+                              
                 });
+                                         
+                
                 //Create a data source and add it to the map.
                 datasource = new atlas.source.DataSource();
                 map.sources.add(datasource);
