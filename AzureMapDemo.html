@@ -41,12 +41,12 @@
             //Create a popup which we can reuse for each result.
             popup = new atlas.Popup();
             //Wait until the map resources have fully loaded.
+            
+            
             map.events.add('load', function () {
                 //Add the zoom control to the map.
                 map.controls.add(new atlas.control.ZoomControl(), {
-                    position: 'top-right'
-                map.setTraffic({incidents: true, flow: 'absolute'});
-                              
+                    position: 'top-right'                            
                 });
                                          
                 
